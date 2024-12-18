@@ -161,6 +161,48 @@ export const conversion = {
     pt: (value, props) => ((value / 100) * props.viewPortHeight) / 1.33333,
     pc: (value, props) => ((value / 100) * props.viewPortHeight) / 16,
   },
+  vmin: {
+    px: (value, props) => (value / 100) * props.minViewPortSize,
+    rem: (value, props) =>
+      ((value / 100) * props.minViewPortSize) / props.rootFontSize,
+    em: (value, props) =>
+      ((value / 100) * props.minViewPortSize) / props.baseFontSize,
+    "%": (value) => value, // vmin is directly percentage-based
+    vw: (value, props) =>
+      ((value / 100) * props.minViewPortSize) / props.viewPortWidth,
+    vh: (value, props) =>
+      ((value / 100) * props.minViewPortSize) / props.viewPortHeight,
+    vmax: (value, props) =>
+      ((value / 100) * props.minViewPortSize) / props.maxViewPortSize,
+    ch: (value, props) =>
+      ((value / 100) * props.minViewPortSize) / props.chSize,
+    cm: (value, props) => ((value / 100) * props.minViewPortSize) / 37.7953,
+    mm: (value, props) => ((value / 100) * props.minViewPortSize) / 3.77953,
+    in: (value, props) => ((value / 100) * props.minViewPortSize) / 96,
+    pt: (value, props) => ((value / 100) * props.minViewPortSize) / 1.33333,
+    pc: (value, props) => ((value / 100) * props.minViewPortSize) / 16,
+  },
+  vmax: {
+    px: (value, props) => (value / 100) * props.maxViewPortSize,
+    rem: (value, props) =>
+      ((value / 100) * props.maxViewPortSize) / props.rootFontSize,
+    em: (value, props) =>
+      ((value / 100) * props.maxViewPortSize) / props.baseFontSize,
+    "%": (value) => value, // vmax is directly percentage-based
+    vw: (value, props) =>
+      ((value / 100) * props.maxViewPortSize) / props.viewPortWidth,
+    vh: (value, props) =>
+      ((value / 100) * props.maxViewPortSize) / props.viewPortHeight,
+    vmin: (value, props) =>
+      ((value / 100) * props.maxViewPortSize) / props.minViewPortSize,
+    ch: (value, props) =>
+      ((value / 100) * props.maxViewPortSize) / props.chSize,
+    cm: (value, props) => ((value / 100) * props.maxViewPortSize) / 37.7953,
+    mm: (value, props) => ((value / 100) * props.maxViewPortSize) / 3.77953,
+    in: (value, props) => ((value / 100) * props.maxViewPortSize) / 96,
+    pt: (value, props) => ((value / 100) * props.maxViewPortSize) / 1.33333,
+    pc: (value, props) => ((value / 100) * props.maxViewPortSize) / 16,
+  },
 };
 
 /**
