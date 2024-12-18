@@ -121,6 +121,46 @@ export const conversion = {
     pt: (value) => value * (1.33333 / 96),
     pc: (value) => value * (16 / 96),
   },
+  vw: {
+    px: (value, props) => (value / 100) * props.viewPortWidth,
+    rem: (value, props) =>
+      ((value / 100) * props.viewPortWidth) / props.rootFontSize,
+    em: (value, props) =>
+      ((value / 100) * props.viewPortWidth) / props.baseFontSize,
+    "%": (value) => value, // vw is directly percentage-based
+    vh: (value, props) =>
+      ((value / 100) * props.viewPortWidth) / props.viewPortHeight,
+    vmin: (value, props) =>
+      ((value / 100) * props.viewPortWidth) / props.minViewPortSize,
+    vmax: (value, props) =>
+      ((value / 100) * props.viewPortWidth) / props.maxViewPortSize,
+    ch: (value, props) => ((value / 100) * props.viewPortWidth) / props.chSize,
+    cm: (value, props) => ((value / 100) * props.viewPortWidth) / 37.7953,
+    mm: (value, props) => ((value / 100) * props.viewPortWidth) / 3.77953,
+    in: (value, props) => ((value / 100) * props.viewPortWidth) / 96,
+    pt: (value, props) => ((value / 100) * props.viewPortWidth) / 1.33333,
+    pc: (value, props) => ((value / 100) * props.viewPortWidth) / 16,
+  },
+  vh: {
+    px: (value, props) => (value / 100) * props.viewPortHeight,
+    rem: (value, props) =>
+      ((value / 100) * props.viewPortHeight) / props.rootFontSize,
+    em: (value, props) =>
+      ((value / 100) * props.viewPortHeight) / props.baseFontSize,
+    "%": (value) => value, // vh is directly percentage-based
+    vw: (value, props) =>
+      ((value / 100) * props.viewPortHeight) / props.viewPortWidth,
+    vmin: (value, props) =>
+      ((value / 100) * props.viewPortHeight) / props.minViewPortSize,
+    vmax: (value, props) =>
+      ((value / 100) * props.viewPortHeight) / props.maxViewPortSize,
+    ch: (value, props) => ((value / 100) * props.viewPortHeight) / props.chSize,
+    cm: (value, props) => ((value / 100) * props.viewPortHeight) / 37.7953,
+    mm: (value, props) => ((value / 100) * props.viewPortHeight) / 3.77953,
+    in: (value, props) => ((value / 100) * props.viewPortHeight) / 96,
+    pt: (value, props) => ((value / 100) * props.viewPortHeight) / 1.33333,
+    pc: (value, props) => ((value / 100) * props.viewPortHeight) / 16,
+  },
 };
 
 /**
