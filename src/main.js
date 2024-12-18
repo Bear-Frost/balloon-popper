@@ -105,6 +105,22 @@ export const conversion = {
     pt: (value) => value * (1.33333 / 96),
     pc: (value) => value * (16 / 96),
   },
+  "%": {
+    px: (value, props) => (value / 100) * props.baseFontSize,
+    rem: (value, props) =>
+      (value / 100) * (props.baseFontSize / props.rootFontSize),
+    em: (value, props) => value / 100,
+    vw: (value, props) => (value / 100) * props.viewPortWidth,
+    vh: (value, props) => (value / 100) * props.viewPortHeight,
+    vmin: (value, props) => (value / 100) * props.minViewPortSize,
+    vmax: (value, props) => (value / 100) * props.maxViewPortSize,
+    ch: (value, props) => (value / 100) * props.chFontSize,
+    cm: (value) => value * (37.7953 / 96),
+    mm: (value) => value * (3.77953 / 96),
+    in: (value) => value * (96 / 96),
+    pt: (value) => value * (1.33333 / 96),
+    pc: (value) => value * (16 / 96),
+  },
 };
 
 /**
