@@ -50,7 +50,7 @@ const viewWidth = getViewPortDimension("width");
 const viewHeight = getViewPortDimension("height");
 const chSize = getChWidth();
 
-export const conversion = {
+const conversion = {
   px: {
     rem: (value, props) => value / props.rootFontSize,
     em: (value, props) => value / props.baseFontSize,
@@ -65,6 +65,21 @@ export const conversion = {
     in: (value) => value / 96,
     pt: (value) => value / 1.33333,
     pc: (value) => value / 16,
+  },
+  in: {
+    px: (value, props) => value * 96,
+    rem: (value, props) => (value * 96) / props.rootFontSize,
+    em: (value, props) => (value * 96) / props.baseFontSize,
+    "%": (value, props) => (value * 96) / props.baseFontSize * 100,
+    vw: (value, props) => (value * 96) / props.viewPortWidth,
+    vh: (value, props) => (value * 96) / props.viewPortHeight,
+    vmin: (value, props) => (value * 96) / props.minViewPortSize,
+    vmax: (value, props) => (value * 96) / props.maxViewPortSize,
+    ch: (value, props) => (value * 96) / props.chSize,
+    cm: (value, props) => value * 96 / 2.54,
+    mm: (value, props) => value * 96 / 25.4,
+    pt: (value, props) => value * 96 / 72,
+    pc: (value, props) => (value * 96) / 12,
   },
   rem: {
     px: (value, props) => value * props.rootFontSize,
