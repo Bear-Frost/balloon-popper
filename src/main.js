@@ -86,6 +86,25 @@ export const conversion = {
     pt: (value) => value * (1.33333 / 96),
     pc: (value) => value * (16 / 96),
   },
+  em: {
+    px: (value, props) => value * props.baseFontSize,
+    rem: (value, props) => (value * props.baseFontSize) / props.rootFontSize,
+    "%": (value, props) => value * 100,
+    vw: (value, props) =>
+      ((value * props.baseFontSize) / props.viewPortWidth) * 100,
+    vh: (value, props) =>
+      ((value * props.baseFontSize) / props.viewPortHeight) * 100,
+    vmin: (value, props) =>
+      ((value * props.baseFontSize) / props.minViewPortSize) * 100,
+    vmax: (value, props) =>
+      ((value * props.baseFontSize) / props.maxViewPortSize) * 100,
+    ch: (value, props) => (value * props.baseFontSize) / props.chFontSize,
+    cm: (value) => value * (37.7953 / 96),
+    mm: (value) => value * (3.77953 / 96),
+    in: (value) => value * (96 / 96),
+    pt: (value) => value * (1.33333 / 96),
+    pc: (value) => value * (16 / 96),
+  },
 };
 
 /**
