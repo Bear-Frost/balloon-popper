@@ -328,6 +328,30 @@ const conversion = {
     q: (value, props) =>
       ((value / 100) * props.maxViewPortSize * 25.4) / (96 * 4),
   },
+  // angle units
+  deg: {
+    rad: (value) => value * (Math.PI / 180),
+    grad: (value) => value * (400 / 360),
+    turn: (value) => value / 360,
+  },
+  
+  grad: {
+    rad: (value) => value * (Math.PI / 200),
+    deg: (value) => value * (360 / 400),
+    turn: (value) => value / 400,
+  },
+  
+  turn: {
+    rad: (value) => value * (2 * Math.PI),
+    deg: (value) => value * 360,
+    grad: (value) => value * 400,
+  },
+  
+  rad: {
+    deg: (value) => value * (180 / Math.PI),
+    grad: (value) => value * (200 / Math.PI),
+    turn: (value) => value / (2 * Math.PI),
+  },
 };
 
 /**
