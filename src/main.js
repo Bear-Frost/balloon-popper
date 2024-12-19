@@ -156,6 +156,23 @@ const conversion = {
     ch: (value, props) => (value * 96) / 25.4 / props.chSize,
     cm: (value, props) => value / 10,
   },
+  q: {
+    px: (value, props) => ((value / 4) * 96) / 25.4,
+    rem: (value, props) => ((value / 4) * 96) / 25.4 / props.rootFontSize,
+    em: (value, props) => ((value / 4) * 96) / 25.4 / props.baseFontSize,
+    "%": (value, props) =>
+      (((value / 4) * 96) / 25.4 / props.baseFontSize) * 100,
+    vw: (value, props) => ((value / 4) * 96) / 25.4 / props.viewPortWidth,
+    vh: (value, props) => ((value / 4) * 96) / 25.4 / props.viewPortHeight,
+    vmin: (value, props) => ((value / 4) * 96) / 25.4 / props.minViewPortSize,
+    vmax: (value, props) => ((value / 4) * 96) / 25.4 / props.maxViewPortSize,
+    ch: (value, props) => ((value / 4) * 96) / 25.4 / props.chSize,
+    cm: (value, props) => value / 4 / 10,
+    mm: (value, props) => value / 4,
+    in: (value, props) => value / 4 / 25.4,
+    pt: (value, props) => ((value / 4) * 96) / 25.4 / 72,
+    pc: (value, props) => ((value / 4) * 96) / 25.4 / 12,
+  },
   rem: {
     px: (value, props) => value * props.rootFontSize,
     em: (value, props) => (value * props.rootFontSize) / props.baseFontSize,
