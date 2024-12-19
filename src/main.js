@@ -334,23 +334,41 @@ const conversion = {
     grad: (value) => value * (400 / 360),
     turn: (value) => value / 360,
   },
-  
+
   grad: {
     rad: (value) => value * (Math.PI / 200),
     deg: (value) => value * (360 / 400),
     turn: (value) => value / 400,
   },
-  
+
   turn: {
     rad: (value) => value * (2 * Math.PI),
     deg: (value) => value * 360,
     grad: (value) => value * 400,
   },
-  
+
   rad: {
     deg: (value) => value * (180 / Math.PI),
     grad: (value) => value * (200 / Math.PI),
     turn: (value) => value / (2 * Math.PI),
+  },
+  // resolution units
+  dpi: {
+    dpcm: (value) => value / 2.54,
+    dppx: (value) => value / 96,
+    dpi: (value) => value,
+  },
+
+  dpcm: {
+    dpi: (value) => value * 2.54,
+    dppx: (value) => (value * 2.54) / 96,
+    dpcm: (value) => value,
+  },
+
+  dppx: {
+    dpi: (value) => value * 96,
+    dpcm: (value) => (value * 96) / 2.54,
+    dppx: (value) => value,
   },
 };
 
