@@ -356,19 +356,23 @@ const conversion = {
   dpi: {
     dpcm: (value) => value / 2.54,
     dppx: (value) => value / 96,
-    dpi: (value) => value,
   },
 
   dpcm: {
     dpi: (value) => value * 2.54,
     dppx: (value) => (value * 2.54) / 96,
-    dpcm: (value) => value,
   },
 
   dppx: {
     dpi: (value) => value * 96,
     dpcm: (value) => (value * 96) / 2.54,
-    dppx: (value) => value,
+  },
+  // time units
+  s: {
+    ms: (value) => value * 1000,
+  },
+  ms: {
+    ms: (value) => value,
   },
 };
 
