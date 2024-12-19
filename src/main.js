@@ -257,8 +257,7 @@ const conversion = {
     in: (value, props) => ((value / 100) * props.viewPortWidth) / 96,
     pt: (value, props) => ((value / 100) * props.viewPortWidth) / 1.33333,
     pc: (value, props) => ((value / 100) * props.viewPortWidth) / 16,
-    q: (value, props) =>
-      ((value / 100) * props.viewPortWidth * 4) / 25.4,
+    q: (value, props) => ((value / 100) * props.viewPortWidth * 4) / 25.4,
   },
   vh: {
     px: (value, props) => (value / 100) * props.viewPortHeight,
@@ -279,8 +278,7 @@ const conversion = {
     in: (value, props) => ((value / 100) * props.viewPortHeight) / 96,
     pt: (value, props) => ((value / 100) * props.viewPortHeight) / 1.33333,
     pc: (value, props) => ((value / 100) * props.viewPortHeight) / 16,
-    q: (value, props) =>
-      ((value / 100) * props.viewPortHeight * 4) / 25.4,
+    q: (value, props) => ((value / 100) * props.viewPortHeight * 4) / 25.4,
   },
   vmin: {
     px: (value, props) => (value / 100) * props.minViewPortSize,
@@ -302,8 +300,7 @@ const conversion = {
     in: (value, props) => ((value / 100) * props.minViewPortSize) / 96,
     pt: (value, props) => ((value / 100) * props.minViewPortSize) / 1.33333,
     pc: (value, props) => ((value / 100) * props.minViewPortSize) / 16,
-    q: (value, props) =>
-      ((value / 100) * props.minViewPortSize * 4) / 25.4,
+    q: (value, props) => ((value / 100) * props.minViewPortSize * 4) / 25.4,
   },
   vmax: {
     px: (value, props) => (value / 100) * props.maxViewPortSize,
@@ -325,8 +322,7 @@ const conversion = {
     in: (value, props) => ((value / 100) * props.maxViewPortSize) / 96,
     pt: (value, props) => ((value / 100) * props.maxViewPortSize) / 1.33333,
     pc: (value, props) => ((value / 100) * props.maxViewPortSize) / 16,
-    q: (value, props) =>
-      ((value / 100) * props.maxViewPortSize * 4) / 25.4,
+    q: (value, props) => ((value / 100) * props.maxViewPortSize * 4) / 25.4,
   },
   // angle units
   deg: {
