@@ -378,6 +378,7 @@ const conversion = {
  * @param {number} value - The value to convert.
  * @param {string} targetUnit - The target CSS unit to convert to.
  * @param {string} sourceUnit - The source CSS unit to convert from.
+ * @param {boolean | number} [precision=false] - The precision of the converted value. If set to a number, rounds the value to that number of decimal places.
  * @param {object} [options] - Optional parameters for the conversion.
  * @param {number} [options.rootFontSize=16] - The root font size used for rem conversion.
  * @param {number} [options.baseFontSize=16] - The base font size used for em conversion.
@@ -396,6 +397,7 @@ export const unitFlip = (
   {
     rootFontSize = 16,
     baseFontSize = 16,
+    precision = false,
     chFontSize = chSize,
     viewPortWidth = viewWidth,
     viewPortHeight = viewHeight,
@@ -422,5 +424,12 @@ export const unitFlip = (
       `Conversion from "${sourceUnit}" to "${targetUnit}" is not supported. Please check the available units and conversion rules.`
     );
   }
-  return conversion[targetUnit][sourceUnit](value, props);
+  const converted = conversion[targetUnit][sourceUnit](value, props);
+
+  if (precision !== false) {
+    precision = Math.pow(10, parseInt(precision) || 5);
+    return Math.round(converted * precision) / precision;
+  }
+
+  return converted;
 };
