@@ -20,14 +20,7 @@ const unitConversion = [
   [16, 2.1534320323014806, "px", "vh", false, { viewPortHeight: 743 }],
   [16, 2.15, "px", "vh", 2, { viewPortHeight: 743 }],
   // px -> vmin
-  [
-    16,
-    2.1534320323014806,
-    "px",
-    "vmin",
-    false,
-    { viewPortWidth: 1280, viewPortHeight: 743 },
-  ],
+  [16, 2.1534320323014806, "px", "vmin", false, { viewPortWidth: 1280, viewPortHeight: 743 }],
   [16, 2.15, "px", "vmin", 2, { viewPortWidth: 1280, viewPortHeight: 743 }],
   // px -> vmax
   [16, 1.25, "px", "vmax", false, { viewPortWidth: 1280, viewPortHeight: 743 }],
@@ -84,6 +77,36 @@ const unitConversion = [
   [16, 96, "in", "pc", false],
   // in -> q
   [16, 1625.6, "in", "q", false],
+
+  // pc unit conversion
+  // pc -> px 
+  [16, 256, "pc", "px", false],
+  // pc -> rem
+  [16, 16, "pc", "rem", false],
+  // pc -> em
+  [16, 16, "pc", "em", false],
+  // pc -> %
+  [16, 1600, "pc", "%", false],
+  // pc -> vw
+  [16, 20, "pc", "vw", false, { viewPortWidth: 1280 }],
+  // pc -> vh
+  [16, 34.45, "pc", "vh", 2, { viewPortHeight: 743 }],
+  // pc -> vmin
+  [16, 34.45, "pc", "vmin", 2, { viewPortWidth: 1280, viewPortHeight: 743 }],
+  // pc -> vmax
+  [16, 20, "pc", "vmax", 2, { viewPortWidth: 1280, viewPortHeight: 743 }],
+  // pc -> ch 
+  [16, 16, "pc", "ch", false, { chFontSize: 16 }],
+  // pc -> cm 
+  [16, 6.77, "pc", "cm", 2],
+  // pc -> mm
+  [16, 67.73, "pc", "mm", 2],
+  // pc -> in 
+  [16, 2.67, "pc", "in", 2],
+  // pc -> pt
+  [16, 192, "pc", "pt", false],
+  // pc -> q
+  [16, 270.93, "pc", "q", 2],
 ];
 
 unitConversion.forEach((testCase) => {
