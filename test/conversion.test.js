@@ -2,6 +2,8 @@ const unitFlip = require("../src/main");
 
 const unitConversion = [
   // value, expected value, target unit, source unit, precision, props
+
+  // px unit conversion
   //   px -> rem
   [16, 1, "px", "rem", false],
   [32.5, 2.03, "px", "rem", 2],
@@ -51,6 +53,37 @@ const unitConversion = [
   // px -> q
   [16, 64, "px", "q", false],
   [16, 64, "px", "q", 2],
+
+  // in unit conversion
+  // in -> px
+  [16, 1536, "in", "px", false],
+  // in -> rem
+  [16, 96, "in", "rem", false],
+  // in -> em
+  [16, 96, "in", "em", false],
+  [16, 48, "in", "em", false, { baseFontSize: 32 }],
+  // in -> %
+  [16, 9600, "in", "%", false],
+  // in -> vw
+  [16, 120, "in", "vw", false, { viewPortWidth: 1280 }],
+  // in -> vh
+  [16, 206.729, "in", "vh", 3, { viewPortHeight: 743 }],
+  // in -> vmin
+  [16, 206.729, "in", "vmin", 3, { viewPortWidth: 1280, viewPortHeight: 743 }],
+  // in -> vmax
+  [16, 120, "in", "vmax", false, { viewPortWidth: 1280, viewPortHeight: 743 }],
+  // in -> ch
+  [16, 96, "in", "ch", false, { chFontSize: 16 }],
+  // in -> cm
+  [16, 40.64, "in", "cm", false],
+  // in -> mm
+  [16, 406.4, "in", "mm", false],
+  // in -> pt
+  [16, 1152, "in", "pt", false],
+  // in -> pc
+  [16, 96, "in", "pc", false],
+  // in -> q
+  [16, 1625.6, "in", "q", false],
 ];
 
 unitConversion.forEach((testCase) => {
