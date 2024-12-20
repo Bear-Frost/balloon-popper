@@ -135,7 +135,36 @@ const unitConversion = [
   // pt -> pc
   [16,1.33,'pt','pc',2],
   // pt -> q 
-   [16,22.58,'pt','q',2]
+  [16,22.58,'pt','q',2],
+  // ch conversion unit
+  // ch -> px
+  [16,256,'ch','px',2,{chFontSize:16}],
+  // ch -> rem
+  [16,16,'ch','rem',2,{chFontSize:16}],
+  // ch -> em
+  [16,16,'ch','em',2,{chFontSize:16}],
+  // ch -> %
+  [16,1600,'ch','%',2,{chFontSize:16}],
+  // ch -> vw
+  [16,20,'ch','vw',2,{viewPortWidth:1280,chFontSize:16}],
+  // ch -> vh
+  [16,34.45,'ch','vh',2,{viewPortHeight:743,chFontSize:16}],
+  // ch -> vmin
+  [16,34.45,'ch','vmin',2,{viewPortWidth:1280,viewPortHeight:743,chFontSize:16}],
+  // ch -> vmax
+  [16,20,'ch','vmax',2,{viewPortWidth:1280,viewPortHeight:743,chFontSize:16}],
+  // ch -> in 
+  [16,2.67,'ch','in',2,{chFontSize:16}],
+  // ch -> cm
+  [16,6.77,'ch','cm',2,{chFontSize:16}],
+  // ch -> mm
+  [16,67.73,'ch','mm',2,{chFontSize:16}],
+  // ch -> pt
+  [16,192,'ch','pt',2,{chFontSize:16}],
+  // ch -> pc
+  [16,16,'ch','pc',2,{chFontSize:16}],
+  // ch -> q
+  [16,270.93,'ch','q',2,{chFontSize:16}],
 ];
 
 unitConversion.forEach((testCase) => {
