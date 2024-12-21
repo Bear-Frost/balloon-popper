@@ -201,6 +201,23 @@ const unitConversion = [
     { sourceUnit: "pc", expectedValue: 0.01 },
     { sourceUnit: "q", expectedValue: 4.03 },
   ]),
+  // vw unit conversion
+  ...conversionItems("vw", [
+    { sourceUnit: "px", expectedValue: 204.80 },
+    { sourceUnit: "rem", expectedValue: 12.8 },
+    { sourceUnit: "em", expectedValue: 12.8 },
+    { sourceUnit: "%", expectedValue: 1280 },
+    { sourceUnit: "vh", expectedValue:27.56  },
+    { sourceUnit: "vmin", expectedValue:27.56 },
+    { sourceUnit: "vmax", expectedValue: 16 },
+    { sourceUnit: "ch", expectedValue: 12.8 },
+    { sourceUnit: "cm", expectedValue: 5.42 },
+    { sourceUnit: "mm", expectedValue: 54.19 },
+    { sourceUnit: "in", expectedValue: 2.13 },
+    { sourceUnit: "pt", expectedValue: 153.6 },
+    { sourceUnit: "pc", expectedValue: 12.8 },
+    { sourceUnit: "q", expectedValue: 322.52 },
+  ]),
 ];
 
 unitConversion.forEach((testCase) => {
