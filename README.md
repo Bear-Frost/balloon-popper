@@ -13,7 +13,7 @@ A Javascript library for converting CSS units (e.g., px, rem, em, %) into other 
 npm install unitflip
 ```
 **using CDN**
-```bash
+```js
 // ES6 Syntax
 import unitFlip from 'https://unpkg.com/unitflip@latest/dist/index.min.esm.js'
 
