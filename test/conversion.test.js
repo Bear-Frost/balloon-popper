@@ -218,6 +218,23 @@ const unitConversion = [
     { sourceUnit: "pc", expectedValue: 12.8 },
     { sourceUnit: "q", expectedValue: 322.52 },
   ]),
+  // vh unit conversion
+  ...conversionItems('vh',[
+    {sourceUnit:'px',expectedValue:118.88},
+    {sourceUnit:'rem',expectedValue:7.43},
+    {sourceUnit:'rem',expectedValue:7.43},
+    {sourceUnit:'%',expectedValue:743},
+    {sourceUnit:'vw',expectedValue:9.29},
+    {sourceUnit:'vmin',expectedValue:16},
+    {sourceUnit:'vmax',expectedValue:9.29},
+    { sourceUnit: "ch", expectedValue: 7.43 },
+    { sourceUnit: "cm", expectedValue: 3.15 },
+    { sourceUnit: "mm", expectedValue: 31.45 },
+    { sourceUnit: "in", expectedValue: 1.24 },
+    { sourceUnit: "pt", expectedValue: 89.16 },
+    { sourceUnit: "pc", expectedValue: 7.43 },
+    { sourceUnit: "q", expectedValue: 187.21 },
+  ])
 ];
 
 unitConversion.forEach((testCase) => {
