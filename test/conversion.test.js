@@ -1,4 +1,4 @@
-const unitFlip = require("../src/main");
+const unitFlip = require("../src/index");
 
 const conversionItems = (targetUnit, conversionProps) => {
   return conversionProps.map(({ sourceUnit, expectedValue }) => {
