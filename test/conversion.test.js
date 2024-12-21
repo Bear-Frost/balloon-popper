@@ -167,6 +167,40 @@ const unitConversion = [
     { sourceUnit: "pc", expectedValue: 16 },
     { sourceUnit: "q", expectedValue: 270.93 },
   ]),
+  // em unit conversion
+  ...conversionItems("em", [
+    { sourceUnit: "px", expectedValue: 256 },
+    { sourceUnit: "rem", expectedValue: 16 },
+    { sourceUnit: "%", expectedValue: 1600 },
+    { sourceUnit: "vw", expectedValue: 20 },
+    { sourceUnit: "vh", expectedValue: 34.45 },
+    { sourceUnit: "vmin", expectedValue: 34.45 },
+    { sourceUnit: "vmax", expectedValue: 20 },
+    { sourceUnit: "ch", expectedValue: 16 },
+    { sourceUnit: "cm", expectedValue: 6.77 },
+    { sourceUnit: "mm", expectedValue: 67.73 },
+    { sourceUnit: "in", expectedValue: 2.67 },
+    { sourceUnit: "pt", expectedValue: 192 },
+    { sourceUnit: "pc", expectedValue: 16 },
+    { sourceUnit: "q", expectedValue: 270.93 },
+  ]),
+  // % unit conversion
+  ...conversionItems("%", [
+    { sourceUnit: "px", expectedValue: 2.56 },
+    { sourceUnit: "rem", expectedValue: 0.16 },
+    { sourceUnit: "em", expectedValue: 0.16 },
+    { sourceUnit: "vw", expectedValue: 204.8 },
+    { sourceUnit: "vh", expectedValue: 118.88 },
+    { sourceUnit: "vmin", expectedValue: 118.88 },
+    { sourceUnit: "vmax", expectedValue: 204.8 },
+    { sourceUnit: "ch", expectedValue: 2.56 },
+    { sourceUnit: "cm", expectedValue: 6.05 },
+    { sourceUnit: "mm", expectedValue: 9.68 },
+    { sourceUnit: "in", expectedValue: 0.15 },
+    { sourceUnit: "pt", expectedValue: 0.12 },
+    { sourceUnit: "pc", expectedValue: 0.01 },
+    { sourceUnit: "q", expectedValue: 4.03 },
+  ]),
 ];
 
 unitConversion.forEach((testCase) => {
