@@ -290,6 +290,21 @@ const unitConversion = [
     {sourceUnit:'deg',expectedValue:916.73},
     {sourceUnit:'grad',expectedValue:1018.59},
     {sourceUnit:'turn',expectedValue:2.55}
+  ]),
+  // dpi unit conversion
+  ...conversionItems('dpi',[
+    {sourceUnit:'dpcm',expectedValue:6.30},
+    {sourceUnit:'dppx',expectedValue:0.17}
+  ]),
+  // dpcm unit conversion
+  ...conversionItems('dpcm',[
+    {sourceUnit:'dpi',expectedValue:40.64},
+    {sourceUnit:'dppx',expectedValue:0.42}
+  ]),
+  // dppx unit conversion
+  ...conversionItems('dppx',[
+    {sourceUnit:'dpi',expectedValue:1536},
+    {sourceUnit:'dpcm',expectedValue:604.72}
   ])
 ];
 
