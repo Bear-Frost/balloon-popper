@@ -194,6 +194,35 @@ const unitConversion = [
   [16,37.80,'cm','pc',2],
   // cm -> q
   [16,640,'cm','q',2],
+  // mm unit conversion
+  // mm -> px
+  [16,60.47,'mm','px',2],
+  // mm -> rem
+  [16,3.78,'mm','rem',2],
+  // mm -> em
+  [16,3.78,'mm','em',2],
+  // mm -> %
+  [16,377.95,'mm','%',2],
+  // mm -> vw
+  [16,4.72,'mm','vw',2,{viewPortWidth:1280}],
+  // mm -> vh
+  [16,8.14,'mm','vh',2,{viewPortHeight:743}],
+  // mm -> vmin
+  [16,8.14,'mm','vmin',2,{viewPortWidth:1280,viewPortHeight:743}],
+  // mm -> vmax
+  [16,4.72,'mm','vmax',2,{viewPortWidth:1280,viewPortHeight:743}],
+  // mm -> ch
+  [16,3.78,'mm','ch',2,{chFontSize:16}],
+  // mm -> cm
+  [16,1.60,'mm','cm',2],
+  // mm -> in
+  [16,0.63,'mm','in',2],
+  // mm -> pt
+  [16,45.35,'mm','pt',2],
+  // mm -> pc
+  [16,3.78,'mm','pc',2],
+  // mm -> q
+  [16,64.00,'mm','q',2],
 ];
 
 unitConversion.forEach((testCase) => {
