@@ -1,286 +1,172 @@
 const unitFlip = require("../src/main");
 
+const conversionItems = (targetUnit, conversionProps) => {
+  return conversionProps.map(({ sourceUnit, expectedValue }) => {
+    return [
+      16,
+      expectedValue,
+      targetUnit,
+      sourceUnit,
+      2,
+      { chFontSize: 16, viewPortWidth: 1280, viewPortHeight: 743 },
+    ];
+  });
+};
+
 const unitConversion = [
-  // value, expected value, target unit, source unit, precision, props
-
   // px unit conversion
-  //   px -> rem
-  [16, 1, "px", "rem", false],
-  [32.5, 2.03, "px", "rem", 2],
-  // px -> em
-  [16, 1, "px", "em", false],
-  [32, 1, "px", "em", 0, { baseFontSize: 32 }],
-  // px -> %
-  [16, 100, "px", "%", false],
-  [31.5, 196.88, "px", "%", "2"],
-  // px -> vw
-  [16, 1.25, "px", "vw", false, { viewPortWidth: 1280 }],
-  [31, 2.42, "px", "vw", 2, { viewPortWidth: 1280 }],
-  // px -> vh
-  [16, 2.1534320323014806, "px", "vh", false, { viewPortHeight: 743 }],
-  [16, 2.15, "px", "vh", 2, { viewPortHeight: 743 }],
-  // px -> vmin
-  [16, 2.1534320323014806, "px", "vmin", false, { viewPortWidth: 1280, viewPortHeight: 743 }],
-  [16, 2.15, "px", "vmin", 2, { viewPortWidth: 1280, viewPortHeight: 743 }],
-  // px -> vmax
-  [16, 1.25, "px", "vmax", false, { viewPortWidth: 1280, viewPortHeight: 743 }],
-  [16, 1.25, "px", "vmax", 2, { viewPortWidth: 1280, viewPortHeight: 743 }],
-  // px -> ch
-  [16, 1, "px", "ch", false, { chFontSize: 16 }],
-  [16, 1, "px", "ch", 2, { chFontSize: 16 }],
-  // px -> cm
-  [16, 0.42333305993073217, "px", "cm", false],
-  [16, 0.42, "px", "cm", 2],
-  // px -> mm
-  [16, 4.233330599307322, "px", "mm", false],
-  [16, 4.23, "px", "mm", 2],
-  // px -> in
-  [16, 0.16666666666666666, "px", "in", false],
-  [16, 0.17, "px", "in", 2],
-  // px -> pt
-  [16, 12, "px", "pt", false],
-  [16, 12, "px", "pt", 2],
-  // px -> pc
-  [16, 1, "px", "pc", false],
-  [16, 1, "px", "pc", 2],
-  // px -> q
-  [16, 64, "px", "q", false],
-  [16, 64, "px", "q", 2],
-
+  ...conversionItems("px", [
+    { sourceUnit: "rem", expectedValue: 1 },
+    { sourceUnit: "em", expectedValue: 1 },
+    { sourceUnit: "%", expectedValue: 100 },
+    { sourceUnit: "vw", expectedValue: 1.25 },
+    { sourceUnit: "vh", expectedValue: 2.15 },
+    { sourceUnit: "vmin", expectedValue: 2.15 },
+    { sourceUnit: "vmax", expectedValue: 1.25 },
+    { sourceUnit: "ch", expectedValue: 1 },
+    { sourceUnit: "cm", expectedValue: 0.42 },
+    { sourceUnit: "mm", expectedValue: 4.23 },
+    { sourceUnit: "in", expectedValue: 0.17 },
+    { sourceUnit: "pt", expectedValue: 12 },
+    { sourceUnit: "pc", expectedValue: 1 },
+    { sourceUnit: "q", expectedValue: 64 },
+  ]),
   // in unit conversion
-  // in -> px
-  [16, 1536, "in", "px", false],
-  // in -> rem
-  [16, 96, "in", "rem", false],
-  // in -> em
-  [16, 96, "in", "em", false],
-  [16, 48, "in", "em", false, { baseFontSize: 32 }],
-  // in -> %
-  [16, 9600, "in", "%", false],
-  // in -> vw
-  [16, 120, "in", "vw", false, { viewPortWidth: 1280 }],
-  // in -> vh
-  [16, 206.729, "in", "vh", 3, { viewPortHeight: 743 }],
-  // in -> vmin
-  [16, 206.729, "in", "vmin", 3, { viewPortWidth: 1280, viewPortHeight: 743 }],
-  // in -> vmax
-  [16, 120, "in", "vmax", false, { viewPortWidth: 1280, viewPortHeight: 743 }],
-  // in -> ch
-  [16, 96, "in", "ch", false, { chFontSize: 16 }],
-  // in -> cm
-  [16, 40.64, "in", "cm", false],
-  // in -> mm
-  [16, 406.4, "in", "mm", false],
-  // in -> pt
-  [16, 1152, "in", "pt", false],
-  // in -> pc
-  [16, 96, "in", "pc", false],
-  // in -> q
-  [16, 1625.6, "in", "q", false],
-
+  ...conversionItems("in", [
+    { sourceUnit: "px", expectedValue: 1536 },
+    { sourceUnit: "rem", expectedValue: 96 },
+    { sourceUnit: "em", expectedValue: 96 },
+    { sourceUnit: "%", expectedValue: 9600 },
+    { sourceUnit: "vw", expectedValue: 120 },
+    { sourceUnit: "vh", expectedValue: 206.73 },
+    { sourceUnit: "vmin", expectedValue: 206.73 },
+    { sourceUnit: "vmax", expectedValue: 120 },
+    { sourceUnit: "ch", expectedValue: 96 },
+    { sourceUnit: "cm", expectedValue: 40.64 },
+    { sourceUnit: "mm", expectedValue: 406.4 },
+    { sourceUnit: "pt", expectedValue: 1152 },
+    { sourceUnit: "pc", expectedValue: 96 },
+    { sourceUnit: "q", expectedValue: 1625.6 },
+  ]),
   // pc unit conversion
-  // pc -> px 
-  [16, 256, "pc", "px", false],
-  // pc -> rem
-  [16, 16, "pc", "rem", false],
-  // pc -> em
-  [16, 16, "pc", "em", false],
-  // pc -> %
-  [16, 1600, "pc", "%", false],
-  // pc -> vw
-  [16, 20, "pc", "vw", false, { viewPortWidth: 1280 }],
-  // pc -> vh
-  [16, 34.45, "pc", "vh", 2, { viewPortHeight: 743 }],
-  // pc -> vmin
-  [16, 34.45, "pc", "vmin", 2, { viewPortWidth: 1280, viewPortHeight: 743 }],
-  // pc -> vmax
-  [16, 20, "pc", "vmax", 2, { viewPortWidth: 1280, viewPortHeight: 743 }],
-  // pc -> ch 
-  [16, 16, "pc", "ch", false, { chFontSize: 16 }],
-  // pc -> cm 
-  [16, 6.77, "pc", "cm", 2],
-  // pc -> mm
-  [16, 67.73, "pc", "mm", 2],
-  // pc -> in 
-  [16, 2.67, "pc", "in", 2],
-  // pc -> pt
-  [16, 192, "pc", "pt", false],
-  // pc -> q
-  [16, 270.93, "pc", "q", 2],
+  ...conversionItems("pc", [
+    { sourceUnit: "px", expectedValue: 256 },
+    { sourceUnit: "rem", expectedValue: 16 },
+    { sourceUnit: "em", expectedValue: 16 },
+    { sourceUnit: "%", expectedValue: 1600 },
+    { sourceUnit: "vw", expectedValue: 20 },
+    { sourceUnit: "vh", expectedValue: 34.45 },
+    { sourceUnit: "vmin", expectedValue: 34.45 },
+    { sourceUnit: "vmax", expectedValue: 20 },
+    { sourceUnit: "ch", expectedValue: 16 },
+    { sourceUnit: "cm", expectedValue: 6.77 },
+    { sourceUnit: "mm", expectedValue: 67.73 },
+    { sourceUnit: "in", expectedValue: 2.67 },
+    { sourceUnit: "pt", expectedValue: 192 },
+    { sourceUnit: "q", expectedValue: 270.93 },
+  ]),
   // pt unit conversion
-  // pt -> px
-  [16,21.33,'pt','px',2],
-  // pt -> rem
-  [16,1.33,'pt','rem',2],
-  // pt -> em
-  [16,1.33,'pt','em',2],
-  // pt -> %
-  [16,133.33,'pt','%',2],
-  // pt -> vw
-  [16,1.67,'pt','vw',2,{viewPortWidth:1280}],
-  // pt -> vh
-  [16,2.87,'pt','vh',2,{viewPortHeight:743}],
-  // pt -> vmin
-  [16,2.87,'pt','vmin',2,{viewPortWidth:1280,viewPortHeight:743}],
-  // pt -> vmax
-  [16,1.67,'pt','vmax',2,{viewPortWidth:1280,viewPortHeight:743}],
-  // pt -> ch
-  [16,1.33,'pt','ch',2,{chFontSize:16}],
-  // pt -> cm
-  [16,0.56,'pt','cm',2],
-  // pt -> mm
-  [16,5.64,'pt','mm',2],
-  // pt -> in
-  [16,0.22,'pt','in',2],
-  // pt -> pc
-  [16,1.33,'pt','pc',2],
-  // pt -> q 
-  [16,22.58,'pt','q',2],
+  ...conversionItems("pt", [
+    { sourceUnit: "px", expectedValue: 21.33 },
+    { sourceUnit: "rem", expectedValue: 1.33 },
+    { sourceUnit: "em", expectedValue: 1.33 },
+    { sourceUnit: "%", expectedValue: 133.33 },
+    { sourceUnit: "vw", expectedValue: 1.67 },
+    { sourceUnit: "vh", expectedValue: 2.87 },
+    { sourceUnit: "vmin", expectedValue: 2.87 },
+    { sourceUnit: "vmax", expectedValue: 1.67 },
+    { sourceUnit: "ch", expectedValue: 1.33 },
+    { sourceUnit: "cm", expectedValue: 0.56 },
+    { sourceUnit: "mm", expectedValue: 5.64 },
+    { sourceUnit: "in", expectedValue: 0.22 },
+    { sourceUnit: "pc", expectedValue: 1.33 },
+    { sourceUnit: "q", expectedValue: 22.58 },
+  ]),
   // ch conversion unit
-  // ch -> px
-  [16,256,'ch','px',2,{chFontSize:16}],
-  // ch -> rem
-  [16,16,'ch','rem',2,{chFontSize:16}],
-  // ch -> em
-  [16,16,'ch','em',2,{chFontSize:16}],
-  // ch -> %
-  [16,1600,'ch','%',2,{chFontSize:16}],
-  // ch -> vw
-  [16,20,'ch','vw',2,{viewPortWidth:1280,chFontSize:16}],
-  // ch -> vh
-  [16,34.45,'ch','vh',2,{viewPortHeight:743,chFontSize:16}],
-  // ch -> vmin
-  [16,34.45,'ch','vmin',2,{viewPortWidth:1280,viewPortHeight:743,chFontSize:16}],
-  // ch -> vmax
-  [16,20,'ch','vmax',2,{viewPortWidth:1280,viewPortHeight:743,chFontSize:16}],
-  // ch -> in 
-  [16,2.67,'ch','in',2,{chFontSize:16}],
-  // ch -> cm
-  [16,6.77,'ch','cm',2,{chFontSize:16}],
-  // ch -> mm
-  [16,67.73,'ch','mm',2,{chFontSize:16}],
-  // ch -> pt
-  [16,192,'ch','pt',2,{chFontSize:16}],
-  // ch -> pc
-  [16,16,'ch','pc',2,{chFontSize:16}],
-  // ch -> q
-  [16,270.93,'ch','q',2,{chFontSize:16}],
+  ...conversionItems("ch", [
+    { sourceUnit: "px", expectedValue: 256 },
+    { sourceUnit: "rem", expectedValue: 16 },
+    { sourceUnit: "em", expectedValue: 16 },
+    { sourceUnit: "%", expectedValue: 1600 },
+    { sourceUnit: "vw", expectedValue: 20 },
+    { sourceUnit: "vh", expectedValue: 34.45 },
+    { sourceUnit: "vmin", expectedValue: 34.45 },
+    { sourceUnit: "vmax", expectedValue: 20 },
+    { sourceUnit: "cm", expectedValue: 6.77 },
+    { sourceUnit: "mm", expectedValue: 67.73 },
+    { sourceUnit: "in", expectedValue: 2.67 },
+    { sourceUnit: "pt", expectedValue: 192 },
+    { sourceUnit: "pc", expectedValue: 16 },
+    { sourceUnit: "q", expectedValue: 270.93 },
+  ]),
   // cm unit conversion
-  // cm -> px
-  [16,604.72,'cm','px',2],
-  // cm -> rem
-  [16,37.80,'cm','rem',2],
-  // cm -> em
-  [16,37.80,'cm','em',2],
-  // cm -> %
-  [16,3779.53,'cm','%',2],
-  // cm -> vw
-  [16,47.24,'cm','vw',2,{viewPortWidth:1280}],
-  // cm -> vh
-  [16,81.39,'cm','vh',2,{viewPortHeight:743}],
-  // cm -> vmin
-  [16,81.39,'cm','vmin',2,{viewPortWidth:1280,viewPortHeight:743}],
-  // cm -> vmax
-  [16,47.24,'cm','vmax',2,{viewPortWidth:1280,viewPortHeight:743}],
-  // cm -> ch
-  [16,37.80,'cm','ch',2,{chFontSize:16}],
-  // cm -> mm
-  [16,160,'cm','mm',2],
-  // cm -> in
-  [16,6.30,'cm','in',2],
-  // cm -> pt
-  [16,453.54,'cm','pt',2],
-  // cm -> pc
-  [16,37.80,'cm','pc',2],
-  // cm -> q
-  [16,640,'cm','q',2],
+  ...conversionItems("cm", [
+    { sourceUnit: "px", expectedValue: 604.72 },
+    { sourceUnit: "rem", expectedValue: 37.8 },
+    { sourceUnit: "em", expectedValue: 37.8 },
+    { sourceUnit: "%", expectedValue: 3779.53 },
+    { sourceUnit: "vw", expectedValue: 47.24 },
+    { sourceUnit: "vh", expectedValue: 81.39 },
+    { sourceUnit: "vmin", expectedValue: 81.39 },
+    { sourceUnit: "vmax", expectedValue: 47.24 },
+    { sourceUnit: "ch", expectedValue: 37.8 },
+    { sourceUnit: "mm", expectedValue: 160 },
+    { sourceUnit: "in", expectedValue: 6.3 },
+    { sourceUnit: "pt", expectedValue: 453.54 },
+    { sourceUnit: "pc", expectedValue: 37.8 },
+    { sourceUnit: "q", expectedValue: 640 },
+  ]),
   // mm unit conversion
-  // mm -> px
-  [16,60.47,'mm','px',2],
-  // mm -> rem
-  [16,3.78,'mm','rem',2],
-  // mm -> em
-  [16,3.78,'mm','em',2],
-  // mm -> %
-  [16,377.95,'mm','%',2],
-  // mm -> vw
-  [16,4.72,'mm','vw',2,{viewPortWidth:1280}],
-  // mm -> vh
-  [16,8.14,'mm','vh',2,{viewPortHeight:743}],
-  // mm -> vmin
-  [16,8.14,'mm','vmin',2,{viewPortWidth:1280,viewPortHeight:743}],
-  // mm -> vmax
-  [16,4.72,'mm','vmax',2,{viewPortWidth:1280,viewPortHeight:743}],
-  // mm -> ch
-  [16,3.78,'mm','ch',2,{chFontSize:16}],
-  // mm -> cm
-  [16,1.60,'mm','cm',2],
-  // mm -> in
-  [16,0.63,'mm','in',2],
-  // mm -> pt
-  [16,45.35,'mm','pt',2],
-  // mm -> pc
-  [16,3.78,'mm','pc',2],
-  // mm -> q
-  [16,64.00,'mm','q',2],
+  ...conversionItems("mm", [
+    { sourceUnit: "px", expectedValue: 60.47 },
+    { sourceUnit: "rem", expectedValue: 3.78 },
+    { sourceUnit: "em", expectedValue: 3.78 },
+    { sourceUnit: "%", expectedValue: 377.95 },
+    { sourceUnit: "vw", expectedValue: 4.72 },
+    { sourceUnit: "vh", expectedValue: 8.14 },
+    { sourceUnit: "vmin", expectedValue: 8.14 },
+    { sourceUnit: "vmax", expectedValue: 4.72 },
+    { sourceUnit: "ch", expectedValue: 3.78 },
+    { sourceUnit: "cm", expectedValue: 1.6 },
+    { sourceUnit: "in", expectedValue: 0.63 },
+    { sourceUnit: "pt", expectedValue: 45.35 },
+    { sourceUnit: "pc", expectedValue: 3.78 },
+    { sourceUnit: "q", expectedValue: 64 },
+  ]),
   // q unit conversion
-  // q -> px
-  [16,4.23,'q','px',2],
-  // q -> rem
-  [16,0.26,'q','rem',2],
-  // q -> em
-  [16,0.26,'q','em',2],
-  // q -> %
-  [16,26.46,'q','%',2],
-  // q -> vw
-  [16,0.33,'q','vw',2,{viewPortWidth:1280}],
-  // q -> vh
-  [16,0.57,'q','vh',2,{viewPortHeight:743}],
-  // q -> vmin
-  [16,0.57,'q','vmin',2,{viewPortWidth:1280,viewPortHeight:743}],
-  // q -> vmax
-  [16,0.33,'q','vmax',2,{viewPortWidth:1280,viewPortHeight:743}],
-  // q -> ch
-  [16,0.26,'q','ch',2,{chFontSize:16}],
-  // q -> cm
-  [16,0.40,'q','cm',2],
-  // q -> mm
-  [16,4.00,'q','mm',2],
-  // q -> in
-  [16,0.16,'q','in',2],
-  // q -> pt
-  [16,12.00,'q','pt',2],
-  // q -> pc
-  [16,0.35,'q','pc',2],
+  ...conversionItems("q", [
+    { sourceUnit: "px", expectedValue: 4.23 },
+    { sourceUnit: "rem", expectedValue: 0.26 },
+    { sourceUnit: "em", expectedValue: 0.26 },
+    { sourceUnit: "%", expectedValue: 26.46 },
+    { sourceUnit: "vw", expectedValue: 0.33 },
+    { sourceUnit: "vh", expectedValue: 0.57 },
+    { sourceUnit: "vmin", expectedValue: 0.57 },
+    { sourceUnit: "vmax", expectedValue: 0.33 },
+    { sourceUnit: "ch", expectedValue: 0.26 },
+    { sourceUnit: "cm", expectedValue: 0.4 },
+    { sourceUnit: "mm", expectedValue: 4.0 },
+    { sourceUnit: "in", expectedValue: 0.16 },
+    { sourceUnit: "pt", expectedValue: 12.0 },
+    { sourceUnit: "pc", expectedValue: 0.35 },
+  ]),
   // rem unit conversion
-  // rem -> px
-  [16,256,'rem','px',2],
-  // rem -> em
-  [16,16,'rem','em',2],
-  // rem -> %
-  [16,1600,'rem','%',2],
-  // rem -> vw
-  [16,20,'rem','vw',2,{viewPortWidth:1280}],
-  // rem -> vh
-  [16,34.45,'rem','vh',2,{viewPortHeight:743}],
-  // rem -> vmin
-  [16,34.45,'rem','vmin',2,{viewPortWidth:1280,viewPortHeight:743}],
-  // rem -> vmax
-  [16,20,'rem','vmax',2,{viewPortWidth:1280,viewPortHeight:743}], 
-  // rem -> ch
-  [16,16,'rem','ch',2,{chFontSize:16}],
-  // rem -> cm
-  [16,6.77,'rem','cm',2],
-  // rem -> mm
-  [16,67.73,'rem','mm',2],
-  // rem -> in
-  [16,2.67,'rem','in',2],
-  // rem -> pt
-  [16,192,'rem','pt',2],
-  // rem -> pc
-  [16,16,'rem','pc',2],
-  // rem -> q
-  [16,270.93,'rem','q',2],
+  ...conversionItems("rem", [
+    { sourceUnit: "px", expectedValue: 256 },
+    { sourceUnit: "em", expectedValue: 16 },
+    { sourceUnit: "%", expectedValue: 1600 },
+    { sourceUnit: "vw", expectedValue: 20 },
+    { sourceUnit: "vh", expectedValue: 34.45 },
+    { sourceUnit: "vmin", expectedValue: 34.45 },
+    { sourceUnit: "vmax", expectedValue: 20 },
+    { sourceUnit: "ch", expectedValue: 16 },
+    { sourceUnit: "cm", expectedValue: 6.77 },
+    { sourceUnit: "mm", expectedValue: 67.73 },
+    { sourceUnit: "in", expectedValue: 2.67 },
+    { sourceUnit: "pt", expectedValue: 192 },
+    { sourceUnit: "pc", expectedValue: 16 },
+    { sourceUnit: "q", expectedValue: 270.93 },
+  ]),
 ];
 
 unitConversion.forEach((testCase) => {
