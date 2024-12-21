@@ -251,7 +251,7 @@ const unitConversion = [
     { sourceUnit: "pc", expectedValue: 7.43 },
     { sourceUnit: "q", expectedValue: 187.21 },
   ]),
-  // vmax conversion
+  // vmax unit conversion
   ...conversionItems('vmax',[
     { sourceUnit: "px", expectedValue: 204.80 },
     { sourceUnit: "rem", expectedValue: 12.8 },
@@ -267,6 +267,30 @@ const unitConversion = [
     { sourceUnit: "pc", expectedValue: 12.8 },
     { sourceUnit: "q", expectedValue: 322.52 },
   ]),
+  // deg unit conversion
+  ...conversionItems('deg',[
+    {sourceUnit:'rad',expectedValue:0.28},
+    {sourceUnit:'grad',expectedValue:17.78},
+    {sourceUnit:'turn',expectedValue:0.04}
+  ]),
+  // grad unit conversion
+  ...conversionItems('grad',[
+    {sourceUnit:'rad',expectedValue:0.25},
+    {sourceUnit:'deg',expectedValue:14.4},
+    {sourceUnit:'turn',expectedValue:0.04}
+  ]),
+  // turn unit conversion
+  ...conversionItems('turn',[
+    {sourceUnit:'rad',expectedValue:100.53},
+    {sourceUnit:'deg',expectedValue:5760},
+    {sourceUnit:'grad',expectedValue:6400}
+  ]),
+  // rad unit conversion
+  ...conversionItems('rad',[
+    {sourceUnit:'deg',expectedValue:916.73},
+    {sourceUnit:'grad',expectedValue:1018.59},
+    {sourceUnit:'turn',expectedValue:2.55}
+  ])
 ];
 
 unitConversion.forEach((testCase) => {
