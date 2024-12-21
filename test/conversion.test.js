@@ -305,6 +305,13 @@ const unitConversion = [
   ...conversionItems('dppx',[
     {sourceUnit:'dpi',expectedValue:1536},
     {sourceUnit:'dpcm',expectedValue:604.72}
+  ]),
+  // s unit conversion
+  ...conversionItems('s',[
+    {sourceUnit:'ms',expectedValue:16000}
+  ]),
+  ...conversionItems('ms',[
+    {sourceUnit:'s',expectedValue:0.02}
   ])
 ];
 
