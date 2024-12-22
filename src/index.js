@@ -390,7 +390,8 @@ const conversion = {
  * @returns {number} The converted value in the target CSS unit.
  * @throws {Error} If the target or source unit does not exist in the conversion unit.
  */
-module.exports = (
+
+const unitflip = (
   value,
   sourceUnit,
   targetUnit,
@@ -433,3 +434,4 @@ module.exports = (
 
   return converted;
 };
+export default unitflip;
