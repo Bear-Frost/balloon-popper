@@ -6,6 +6,7 @@
   "browser": "./dist/index.min.umd.js",
   "type": "module",
   "types": "./src/types/index.d.ts",
+  "files": ["dist/"],
   "scripts": {
     "build": "tsc -b && rollup -c",
     "dev": "rollup -c -w",
