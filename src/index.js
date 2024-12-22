@@ -376,8 +376,8 @@ const conversion = {
  * Converts a value from one CSS unit to another.
  *
  * @param {number} value - The value to convert.
- * @param {string} targetUnit - The target CSS unit to convert to.
- * @param {string} sourceUnit - The source CSS unit to convert from.
+ * @param { "px" | "rem" | "em" | "%" | "vw" | "vh" | "vmin" | "vmax" | "ch" | "cm" | "in" | "mm" | "pt" | "pc" | "q" } targetUnit - The target CSS unit to convert to.
+ * @param { "px" | "rem" | "em" | "%" | "vw" | "vh" | "vmin" | "vmax" | "ch" | "cm" | "in" | "mm" | "pt" | "pc" | "q" } sourceUnit - The source CSS unit to convert from.
  * @param {boolean | number} [precision=false] - The precision of the converted value. If set to a number, rounds the value to that number of decimal places.
  * @param {object} [options] - Optional parameters for the conversion.
  * @param {number} [options.rootFontSize=16] - The root font size used for rem conversion.
@@ -390,10 +390,10 @@ const conversion = {
  * @returns {number} The converted value in the target CSS unit.
  * @throws {Error} If the target or source unit does not exist in the conversion unit.
  */
-const unitFlip = (
+module.exports = (
   value,
-  targetUnit,
   sourceUnit,
+  targetUnit,
   precision = false,
   {
     rootFontSize = 16,
@@ -414,17 +414,17 @@ const unitFlip = (
     minViewPortSize,
     maxViewPortSize,
   };
-  if (!conversion.hasOwnProperty(targetUnit)) {
+  if (!conversion.hasOwnProperty(sourceUnit)) {
     throw new Error(
-      `Target unit "${targetUnit}" does not exist in the conversion map. Please ensure it's a valid unit.`
+      `Source unit "${sourceUnit}" does not exist in the conversion map. Please ensure it's a valid unit.`
     );
   }
-  if (!conversion[targetUnit].hasOwnProperty(sourceUnit)) {
+  if (!conversion[sourceUnit].hasOwnProperty(targetUnit)) {
     throw new Error(
       `Conversion from "${sourceUnit}" to "${targetUnit}" is not supported. Please check the available units and conversion rules.`
     );
   }
-  const converted = conversion[targetUnit][sourceUnit](value, props);
+  const converted = conversion[sourceUnit][targetUnit](value, props);
 
   if (precision !== false) {
     precision = Math.pow(10, parseInt(precision) || 5);
@@ -433,5 +433,3 @@ const unitFlip = (
 
   return converted;
 };
-
-module.exports = unitFlip;
