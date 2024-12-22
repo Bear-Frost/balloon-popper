@@ -1,13 +1,17 @@
-import terser from "@rollup/plugin-terser";
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from "@rollup/plugin-commonjs";
 
 export default [
   {
     input: "./src/index.js",
     output: [
-      { file: "dist/index.min.cjs.js", format: "cjs" },
-      { file: "dist/index.min.esm.js", format: "es" },
-      { file: "dist/index.min.umd.js", format: "umd", name: "unitFlip" },
+      { file: "dist/index.cjs.js", format: "cjs" },
+      { file: "dist/index.esm.js", format: "es" },
+      { file: "dist/index.umd.js", format: "umd", name: "unitFlip" },
     ],
-    plugins: [terser()],
+    plugins:[
+      resolve(),
+      commonjs(),
+    ]
   },
 ];
