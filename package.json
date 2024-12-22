@@ -1,5 +1,5 @@
 {
-  "name": "convert-css-units",
+  "name": "unitflip",
   "version": "1.0.0",
   "main": "./dist/index.min.cjs.js",
   "module": "./dist/index.min.esm.js",
