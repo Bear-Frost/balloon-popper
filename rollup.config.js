@@ -2,7 +2,7 @@ import terser from "@rollup/plugin-terser";
 
 export default [
   {
-    input: "./src/main.js",
+    input: "./src/index.js",
     output: [
       { file: "dist/index.min.cjs.js", format: "cjs" },
       { file: "dist/index.min.esm.js", format: "es" },
