@@ -7,7 +7,7 @@
   "type": "module",
   "types": "./src/types/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
+    "build": "tsc -b && rollup -c",
     "dev": "rollup -c -w",
     "test": "jest"
   },
