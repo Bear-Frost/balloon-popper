@@ -1,8 +1,8 @@
 {
   "name": "unitflip",
-  "version": "1.1.0",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "version": "1.1.1",
+  "main": "dist/index.cjs",
+  "module": "dist/index.esm.mjs",
   "browser": "dist/index.umd.js",
   "type": "module",
   "types": "dist/index.d.ts",
