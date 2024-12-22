@@ -26,11 +26,11 @@ declare module "unitflip" {
     maxViewPortSize?: number;
   };
 
-  export default (
+  export default function (
     value: number,
     sourceUnit: CSSUnits,
     targetUnit: CSSUnits,
     precision: number | boolean,
     props: Props
-  ) => number;
+  ): number;
 }
