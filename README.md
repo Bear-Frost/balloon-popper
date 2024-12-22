@@ -15,14 +15,14 @@ npm install unitflip
 **using CDN**
 ```js
 // ES6 Syntax
-import unitFlip from 'https://unpkg.com/unitflip@latest/dist/index.min.esm.js'
+import unitFlip from 'https://unpkg.com/unitflip@latest/dist/index.esm.mjs'
 
 // Common JS
-const unitFlip = require('https://unpkg.com/unitflip@latest/dist/index.min.cjs.js')
+const unitFlip = require('https://unpkg.com/unitflip@latest/dist/index.cjs')
 ```
 **using embedded CDN**
 ```html
-<script src="https://unpkg.com/unitflip@latest/dist/index.min.umd.js"></script>
+<script src="https://unpkg.com/unitflip@latest/dist/index.umd.js"></script>
 ```
 
 ### Usage
