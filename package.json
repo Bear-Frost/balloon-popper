@@ -6,16 +6,33 @@
   "browser": "./dist/index.min.umd.js",
   "type": "module",
   "types": "./src/types/index.d.ts",
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "tsc -b && rollup -c",
     "dev": "rollup -c -w",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "author": "shaian",
+  "keywords": [
+    "converter",
+    "value",
+    "unit",
+    "css-units",
+    "css-playground",
+    "css-unit-converter"
+  ],
+  "description":"A Javascript library for converting CSS units.",
+  "homepage": "https://github.com/zshaian/unitflip",
+  "repository": {
+    "type":"git",
+    "url":"https://github.com/zshaian/unitflip.git"
+  },
+  "bugs":{
+    "url":"https://github.com/zshaian/unitflip/issues"
+  },
   "license": "MIT",
-  "description": "",
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
     "jest": "^29.7.0",
