@@ -407,7 +407,7 @@ const conversion = {
  * @throws {Error} If the target or source unit does not exist in the conversion unit.
  */
 
-module.exports = (
+const unitFlip = (
   value,
   sourceUnit,
   targetUnit,
@@ -450,3 +450,5 @@ module.exports = (
 
   return converted;
 };
+
+export default unitFlip;
