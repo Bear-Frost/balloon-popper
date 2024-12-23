@@ -35,6 +35,9 @@
   "license": "MIT",
   "devDependencies": {
     "jest": "^29.7.0",
-    "rollup": "^4.28.1"
+    "rollup": "^4.28.1",
+    "@babel/core":"^7.15.0",
+    "@babel/preset-env":"^7.15.0",
+    "babel-jest":"27.0.6"
   }
 }
