@@ -5,6 +5,7 @@
         "declaration": true,
         "emitDeclarationOnly": true,
         "outDir": "dist",
-        "declarationMap": false
+        "declarationMap": false,
+        "outFile": "./dist/index.d.ts"
     }
 }
