@@ -109,13 +109,20 @@ npm run build
 
 This generates a `dist/` folder with the production ready files.
 
+### Contributing
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for the process of submitting pull request or creating an issue.
+
+### Code of Conduct
+Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
+
 ### Built With
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![RollupJS](https://img.shields.io/badge/RollupJS-ef3335?style=for-the-badge&logo=rollup.js&logoColor=white)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
-Versioning
+### Versioning
+
 [SemVer](https://semver.org/) for versioning. For the versions available, see the [Repo Tags](https://github.com/zshaian/unitflip/tags)
 
 ## License
