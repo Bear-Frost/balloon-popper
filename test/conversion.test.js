@@ -17,6 +17,7 @@ const conversionItems = (sourceUnit, conversionProps) => {
 const unitConversion = [
   // px unit conversion
   ...conversionItems("px", [
+    {targetUnit:"px",expectedValue:16},
     { targetUnit: "rem", expectedValue: 1 },
     { targetUnit: "em", expectedValue: 1 },
     { targetUnit: "%", expectedValue: 100 },
@@ -34,6 +35,7 @@ const unitConversion = [
   ]),
   // in unit conversion
   ...conversionItems("in", [
+    {targetUnit:"in",expectedValue:16},
     { targetUnit: "px", expectedValue: 1536 },
     { targetUnit: "rem", expectedValue: 96 },
     { targetUnit: "em", expectedValue: 96 },
@@ -51,6 +53,7 @@ const unitConversion = [
   ]),
   // pc unit conversion
   ...conversionItems("pc", [
+    {targetUnit:"pc",expectedValue:16},
     { targetUnit: "px", expectedValue: 256 },
     { targetUnit: "rem", expectedValue: 16 },
     { targetUnit: "em", expectedValue: 16 },
@@ -68,6 +71,7 @@ const unitConversion = [
   ]),
   // pt unit conversion
   ...conversionItems("pt", [
+    { targetUnit: "pt", expectedValue: 16 },
     { targetUnit: "px", expectedValue: 21.33 },
     { targetUnit: "rem", expectedValue: 1.33 },
     { targetUnit: "em", expectedValue: 1.33 },
@@ -85,6 +89,7 @@ const unitConversion = [
   ]),
   // ch conversion unit
   ...conversionItems("ch", [
+    { targetUnit: "ch", expectedValue: 16 },
     { targetUnit: "px", expectedValue: 256 },
     { targetUnit: "rem", expectedValue: 16 },
     { targetUnit: "em", expectedValue: 16 },
@@ -102,6 +107,7 @@ const unitConversion = [
   ]),
   // cm unit conversion
   ...conversionItems("cm", [
+    { targetUnit: "cm", expectedValue: 16 },
     { targetUnit: "px", expectedValue: 604.72 },
     { targetUnit: "rem", expectedValue: 37.8 },
     { targetUnit: "em", expectedValue: 37.8 },
@@ -119,6 +125,7 @@ const unitConversion = [
   ]),
   // mm unit conversion
   ...conversionItems("mm", [
+    { targetUnit: "mm", expectedValue: 16 },
     { targetUnit: "px", expectedValue: 60.47 },
     { targetUnit: "rem", expectedValue: 3.78 },
     { targetUnit: "em", expectedValue: 3.78 },
@@ -136,6 +143,7 @@ const unitConversion = [
   ]),
   // q unit conversion
   ...conversionItems("q", [
+    { targetUnit: "q", expectedValue: 16 },
     { targetUnit: "px", expectedValue: 4.23 },
     { targetUnit: "rem", expectedValue: 0.26 },
     { targetUnit: "em", expectedValue: 0.26 },
@@ -153,6 +161,7 @@ const unitConversion = [
   ]),
   // rem unit conversion
   ...conversionItems("rem", [
+    { targetUnit: "rem", expectedValue: 16 },
     { targetUnit: "px", expectedValue: 256 },
     { targetUnit: "em", expectedValue: 16 },
     { targetUnit: "%", expectedValue: 1600 },
@@ -170,6 +179,7 @@ const unitConversion = [
   ]),
   // em unit conversion
   ...conversionItems("em", [
+    { targetUnit: "em", expectedValue: 16 },
     { targetUnit: "px", expectedValue: 256 },
     { targetUnit: "rem", expectedValue: 16 },
     { targetUnit: "%", expectedValue: 1600 },
@@ -187,6 +197,7 @@ const unitConversion = [
   ]),
   // % unit conversion
   ...conversionItems("%", [
+    { targetUnit: "%", expectedValue: 16 },
     { targetUnit: "px", expectedValue: 2.56 },
     { targetUnit: "rem", expectedValue: 0.16 },
     { targetUnit: "em", expectedValue: 0.16 },
@@ -204,6 +215,7 @@ const unitConversion = [
   ]),
   // vw unit conversion
   ...conversionItems("vw", [
+    { targetUnit: "vw", expectedValue: 16 },
     { targetUnit: "px", expectedValue: 204.80 },
     { targetUnit: "rem", expectedValue: 12.8 },
     { targetUnit: "em", expectedValue: 12.8 },
@@ -221,6 +233,7 @@ const unitConversion = [
   ]),
   // vh unit conversion
   ...conversionItems('vh',[
+    { targetUnit: "vh", expectedValue: 16 },
     {targetUnit:'px',expectedValue:118.88},
     {targetUnit:'rem',expectedValue:7.43},
     {targetUnit:'rem',expectedValue:7.43},
@@ -238,6 +251,7 @@ const unitConversion = [
   ]),
   // vmin unit conversion
   ...conversionItems('vmin',[
+    { targetUnit: "vmin", expectedValue: 16 },
     {targetUnit:'px',expectedValue:118.88},
     {targetUnit:'rem',expectedValue:7.43},
     {targetUnit:'rem',expectedValue:7.43},
@@ -254,6 +268,7 @@ const unitConversion = [
   ]),
   // vmax unit conversion
   ...conversionItems('vmax',[
+    { targetUnit: "vmax", expectedValue: 16 },
     { targetUnit: "px", expectedValue: 204.80 },
     { targetUnit: "rem", expectedValue: 12.8 },
     { targetUnit: "em", expectedValue: 12.8 },
@@ -270,48 +285,57 @@ const unitConversion = [
   ]),
   // deg unit conversion
   ...conversionItems('deg',[
+    { targetUnit: "deg", expectedValue: 16 },
     {targetUnit:'rad',expectedValue:0.28},
     {targetUnit:'grad',expectedValue:17.78},
     {targetUnit:'turn',expectedValue:0.04}
   ]),
   // grad unit conversion
   ...conversionItems('grad',[
+    { targetUnit: "grad", expectedValue: 16 },
     {targetUnit:'rad',expectedValue:0.25},
     {targetUnit:'deg',expectedValue:14.4},
     {targetUnit:'turn',expectedValue:0.04}
   ]),
   // turn unit conversion
   ...conversionItems('turn',[
+    { targetUnit: "turn", expectedValue: 16 },
     {targetUnit:'rad',expectedValue:100.53},
     {targetUnit:'deg',expectedValue:5760},
     {targetUnit:'grad',expectedValue:6400}
   ]),
   // rad unit conversion
   ...conversionItems('rad',[
+    { targetUnit: "rad", expectedValue: 16 },
     {targetUnit:'deg',expectedValue:916.73},
     {targetUnit:'grad',expectedValue:1018.59},
     {targetUnit:'turn',expectedValue:2.55}
   ]),
   // dpi unit conversion
   ...conversionItems('dpi',[
+    { targetUnit: "dpi", expectedValue: 16 },
     {targetUnit:'dpcm',expectedValue:6.30},
     {targetUnit:'dppx',expectedValue:0.17}
   ]),
   // dpcm unit conversion
   ...conversionItems('dpcm',[
+    { targetUnit: "dpcm", expectedValue: 16 },
     {targetUnit:'dpi',expectedValue:40.64},
     {targetUnit:'dppx',expectedValue:0.42}
   ]),
   // dppx unit conversion
   ...conversionItems('dppx',[
+    { targetUnit: "dppx", expectedValue: 16 },
     {targetUnit:'dpi',expectedValue:1536},
     {targetUnit:'dpcm',expectedValue:604.72}
   ]),
   // s unit conversion
   ...conversionItems('s',[
+    { targetUnit: "s", expectedValue: 16 },
     {targetUnit:'ms',expectedValue:16000}
   ]),
   ...conversionItems('ms',[
+    { targetUnit: "ms", expectedValue: 16 },
     {targetUnit:'s',expectedValue:0.02}
   ])
 ];
