@@ -6,6 +6,7 @@ const chSize = getChWidth();
 
 const conversion = {
   px: {
+    px: (value) => value,
     rem: (value, props) => value / props.rootFontSize,
     em: (value, props) => value / props.baseFontSize,
     "%": (value, props) => (value / props.baseFontSize) * 100,
@@ -22,6 +23,7 @@ const conversion = {
     q: (value) => value * 4,
   },
   in: {
+    in: (value) => value,
     px: (value, props) => value * 96,
     rem: (value, props) => (value * 96) / props.rootFontSize,
     em: (value, props) => (value * 96) / props.baseFontSize,
@@ -38,6 +40,7 @@ const conversion = {
     q: (value) => value * 101.6,
   },
   pc: {
+    pc: (value) => value,
     px: (value) => value * 16,
     rem: (value, props) => (value * 16) / props.rootFontSize,
     em: (value, props) => (value * 16) / props.baseFontSize,
@@ -58,6 +61,7 @@ const conversion = {
     q: (value) => value * 16.933333332,
   },
   pt: {
+    pt: (value) => value,
     px: (value) => value * (96 / 72),
     rem: (value, props) => (value * (96 / 72)) / props.rootFontSize,
     em: (value, props) => (value * (96 / 72)) / props.baseFontSize,
@@ -74,6 +78,7 @@ const conversion = {
     q: (value) => value * 1.411111111,
   },
   ch: {
+    ch: (value) => value,
     px: (value, props) => value * props.chFontSize,
     rem: (value, props) => (value * props.chFontSize) / props.rootFontSize,
     em: (value, props) => (value * props.chFontSize) / props.baseFontSize,
@@ -95,6 +100,7 @@ const conversion = {
     q: (value, props) => (value * props.chFontSize * 40) / 37.7952755906,
   },
   cm: {
+    cm: (value) => value,
     px: (value) => value * (96 / 2.54),
     rem: (value, props) => (value * (96 / 2.54)) / props.rootFontSize,
     em: (value, props) => (value * (96 / 2.54)) / props.baseFontSize,
@@ -113,6 +119,7 @@ const conversion = {
     q: (value) => value * 40,
   },
   mm: {
+    mm: (value) => value,
     px: (value, props) => (value * 96) / 25.4,
     rem: (value, props) => (value * 96) / 25.4 / props.rootFontSize,
     em: (value, props) => (value * 96) / 25.4 / props.baseFontSize,
@@ -129,6 +136,7 @@ const conversion = {
     q: (value) => value * 4,
   },
   q: {
+    q: (value) => value,
     px: (value) => (value * 25.4) / 96,
     rem: (value, props) => (value * 25.4) / 96 / props.rootFontSize,
     em: (value, props) => (value * 25.4) / 96 / props.baseFontSize,
@@ -145,6 +153,7 @@ const conversion = {
     pc: (value) => (value * 25.4) / 96 / 12,
   },
   rem: {
+    rem: (value) => value,
     px: (value, props) => value * props.rootFontSize,
     em: (value, props) => (value * props.rootFontSize) / props.baseFontSize,
     "%": (value, props) =>
@@ -166,6 +175,7 @@ const conversion = {
     q: (value, props) => (value * props.rootFontSize * 40) / 37.7952755906,
   },
   em: {
+    em: (value) => value,
     px: (value, props) => value * props.baseFontSize,
     rem: (value, props) => (value * props.baseFontSize) / props.rootFontSize,
     "%": (value, props) => value * 100,
@@ -186,6 +196,7 @@ const conversion = {
     q: (value, props) => (value * props.baseFontSize * 40) / 37.7952755906,
   },
   "%": {
+    "%": (value) => value,
     px: (value, props) => (value / 100) * props.baseFontSize,
     rem: (value, props) =>
       (value / 100) * (props.baseFontSize / props.rootFontSize),
@@ -203,6 +214,7 @@ const conversion = {
     q: (value, props) => ((value / 100) * (props.baseFontSize * 40)) / 25.4,
   },
   vw: {
+    vw: (value) => value,
     px: (value, props) => (value / 100) * props.viewPortWidth,
     rem: (value, props) =>
       ((value / 100) * props.viewPortWidth) / props.rootFontSize,
@@ -226,6 +238,7 @@ const conversion = {
     q: (value, props) => (value * props.viewPortWidth * 40) / (100 * 25.4),
   },
   vh: {
+    vh: (value) => value,
     px: (value, props) => (value / 100) * props.viewPortHeight,
     rem: (value, props) =>
       ((value / 100) * props.viewPortHeight) / props.rootFontSize,
@@ -249,6 +262,7 @@ const conversion = {
     q: (value, props) => (value * props.viewPortHeight * 40) / (100 * 25.4),
   },
   vmin: {
+    vmin: (value) => value,
     px: (value, props) => (value / 100) * props.minViewPortSize,
     rem: (value, props) =>
       ((value / 100) * props.minViewPortSize) / props.rootFontSize,
@@ -272,6 +286,7 @@ const conversion = {
     q: (value, props) => (value * props.minViewPortSize * 40) / (100 * 25.4),
   },
   vmax: {
+    vmax: (value) => value,
     px: (value, props) => (value / 100) * props.maxViewPortSize,
     rem: (value, props) =>
       ((value / 100) * props.maxViewPortSize) / props.rootFontSize,
@@ -296,48 +311,57 @@ const conversion = {
   },
   // angle units
   deg: {
+    deg: (value) => value,
     rad: (value) => value * (Math.PI / 180),
     grad: (value) => value * (400 / 360),
     turn: (value) => value / 360,
   },
 
   grad: {
+    grad: (value) => value,
     rad: (value) => value * (Math.PI / 200),
     deg: (value) => value * (360 / 400),
     turn: (value) => value / 400,
   },
 
   turn: {
+    turn: (value) => value,
     rad: (value) => value * (2 * Math.PI),
     deg: (value) => value * 360,
     grad: (value) => value * 400,
   },
 
   rad: {
+    rad: (value) => value,
     deg: (value) => value * (180 / Math.PI),
     grad: (value) => value * (200 / Math.PI),
     turn: (value) => value / (2 * Math.PI),
   },
   // resolution units
   dpi: {
+    dpi: (value) => value,
     dpcm: (value) => value / 2.54,
     dppx: (value) => value / 96,
   },
 
   dpcm: {
+    dpcm: (value) => value,
     dpi: (value) => value * 2.54,
     dppx: (value) => (value * 2.54) / 96,
   },
 
   dppx: {
+    dppx: (value) => value,
     dpi: (value) => value * 96,
     dpcm: (value) => (value * 96) / 2.54,
   },
   // time units
   s: {
+    s: (value) => value,
     ms: (value) => value * 1000,
   },
   ms: {
+    ms: (value) => value,
     s: (value) => value / 1000,
   },
 };
