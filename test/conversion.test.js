@@ -283,6 +283,23 @@ const unitConversion = [
     { targetUnit: "pc", expectedValue: 12.8 },
     { targetUnit: "q", expectedValue: 322.52 },
   ]),
+  ...conversionItems('rlh',[
+    { targetUnit: "px", expectedValue: 384 },
+    { targetUnit: "rem", expectedValue: 24 },
+    { targetUnit: "em", expectedValue: 24 },
+    { targetUnit: "%", expectedValue: 2400 },
+    { targetUnit: "vh", expectedValue: 51.68 },
+    { targetUnit: "vw", expectedValue: 30 },
+    { targetUnit: "vmin", expectedValue: 51.68 },
+    { targetUnit: "vmax", expectedValue: 30 },
+    { targetUnit: "ch", expectedValue: 24 },
+    { targetUnit: "cm", expectedValue: 10.16 },
+    { targetUnit: "mm", expectedValue: 101.6 },
+    { targetUnit: "in", expectedValue: 4 },
+    { targetUnit: "pt", expectedValue: 288 },
+    { targetUnit: "pc", expectedValue: 24 },
+    { targetUnit: "q", expectedValue: 406.4 },
+  ]),
   // deg unit conversion
   ...conversionItems('deg',[
     { targetUnit: "deg", expectedValue: 16 },
