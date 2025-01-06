@@ -1,4 +1,8 @@
-import { getChWidth, getViewPortDimension } from "../src/utils";
+import {
+  getChWidth,
+  getViewPortDimension,
+  getRootLineHeight,
+} from "../src/utils";
 
 beforeAll(() => {
   Object.defineProperty(global, "window", {
@@ -70,5 +74,21 @@ describe('get the character width of "0" in a text', () => {
     };
 
     expect(getChWidth()).toBe(16);
+  });
+});
+
+describe("returns the value of 24 if there's no window property or document property, and getComputedStyle method", () => {
+  it("returns a value of 24", () => {
+    expect(getRootLineHeight()).toBe(24);
+  });
+});
+
+describe("get the root line height value of the root element", () => {
+  it("should get the root line height value", () => {
+    global.window.document.documentElement = {};
+    global.window.getComputedStyle = jest
+      .fn()
+      .mockReturnValue({ lineHeight: 36, rootFontSize: 16 });
+    expect(getRootLineHeight()).toBe(36);
   });
 });
