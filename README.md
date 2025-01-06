@@ -110,10 +110,10 @@ npm run build
 This generates a `dist/` folder with the production ready files.
 
 ### Contributing
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for the process of submitting pull request or creating an issue.
+Please read [CONTRIBUTING](CONTRIBUTING.md) for the process of submitting pull request or creating an issue.
 
 ### Code of Conduct
-Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
+Please read [CODE OF CONDUCT](CODE_OF_CONDUCT.md) for details on our code of conduct.
 
 ### Built With
 
