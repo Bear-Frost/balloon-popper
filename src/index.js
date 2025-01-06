@@ -1,8 +1,9 @@
-import { getViewPortDimension, getChWidth } from "./utils/index";
+import { getViewPortDimension, getChWidth, getRootLineHeight } from "./utils/index";
 
 const viewWidth = getViewPortDimension("width");
 const viewHeight = getViewPortDimension("height");
 const chSize = getChWidth();
+const rootLineHeightValue = getRootLineHeight();
 
 const conversion = {
   px: {
@@ -309,6 +310,24 @@ const conversion = {
     pc: (value, props) => ((value / 100) * props.maxViewPortSize) / 16,
     q: (value, props) => (value * props.maxViewPortSize * 40) / (100 * 25.4),
   },
+  rlh:{
+    rlh: (value) => value,
+    px: (value,props) => value * props.rootLineHeight,
+    rem: (value, props) => (value * props.rootLineHeight) / props.rootFontSize,
+    em: (value, props) => (value * props.rootLineHeight) / props.baseFontSize,
+    "%": (value, props) => (value * props.rootLineHeight) / props.baseFontSize * 100,
+    vw: (value, props) => (value * props.rootLineHeight) / props.viewPortWidth * 100,
+    vh: (value, props) => (value * props.rootLineHeight) / props.viewPortHeight * 100,
+    vmin: (value, props) => (value * props.rootLineHeight) / props.minViewPortSize * 100,
+    vmax: (value, props) => (value * props.rootLineHeight) / props.maxViewPortSize * 100,
+    ch: (value, props) => (value * props.rootLineHeight) / props.chFontSize,
+    cm: (value,props) => (value * props.rootLineHeight) / 37.795275591,
+    mm: (value,props) => (value * props.rootLineHeight) / 3.7795275591,
+    in: (value,props) => (value * props.rootLineHeight) / 96,
+    pt: (value,props) => (value * props.rootLineHeight) / 1.3333333333,
+    pc: (value,props) => (value * props.rootLineHeight) / 16,
+    q: (value,props) => (value * props.rootLineHeight) / 0.9448818898,
+  },
   // angle units
   deg: {
     deg: (value) => value,
@@ -376,11 +395,12 @@ const conversion = {
  * @param {object} [options] - Optional parameters for the conversion.
  * @param {number} [options.rootFontSize=16] - The root font size used for rem conversion.
  * @param {number} [options.baseFontSize=16] - The base font size used for em conversion.
- * @param {number} [options.chFontSize=chSize] - The font size of the character '0' used for ch conversion.
+ * @param {number} [options.chFontSize=0] - The font size of the character '0' used for ch conversion.
  * @param {number} [options.viewPortWidth=viewWidth] - The width of the viewport.
  * @param {number} [options.viewPortHeight=viewHeight] - The height of the viewport.
  * @param {number} [options.minViewPortSize=Math.min(viewPortWidth, viewPortHeight)] - The minimum size of the viewport.
  * @param {number} [options.maxViewPortSize=Math.max(viewPortWidth, viewPortHeight)] - The maximum size of the viewport.
+ * @param {number} [options.rootLineHeight=24] - The root line height value. 
  * @returns {number} The converted value in the target CSS unit.
  * @throws {Error} If the target or source unit does not exist in the conversion unit.
  */
@@ -398,6 +418,7 @@ const unitFlip = (
     viewPortHeight = viewHeight,
     minViewPortSize = Math.min(viewPortWidth, viewPortHeight),
     maxViewPortSize = Math.max(viewPortWidth, viewPortHeight),
+    rootLineHeight = rootLineHeightValue,
   } = {}
 ) => {
   const props = {
@@ -408,6 +429,7 @@ const unitFlip = (
     viewPortHeight,
     minViewPortSize,
     maxViewPortSize,
+    rootLineHeight,
   };
   if (!conversion.hasOwnProperty(sourceUnit)) {
     throw new Error(
