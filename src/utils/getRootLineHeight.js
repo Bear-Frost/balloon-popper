@@ -10,7 +10,7 @@ function getRootLineHeight() {
     typeof window.getComputedStyle === "function";
 
   if (!isWindowValid) return 24; // default root line height value.
-  const rootComputedStyle = window.getComputedStyle(document.documentElement);
+  const rootComputedStyle = window.getComputedStyle(window.document.documentElement);
   let rootLineHeightValue = rootComputedStyle.lineHeight;
 
   if (rootLineHeightValue === "normal") {
