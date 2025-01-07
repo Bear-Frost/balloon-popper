@@ -14,7 +14,8 @@ declare module "unitflip" {
     | "mm"
     | "pt"
     | "pc"
-    | "q";
+    | "q"
+    | "rlh";
 
   export type Props = {
     rootFontSize?: number;
