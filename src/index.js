@@ -389,8 +389,8 @@ const conversion = {
  * Converts a value from one CSS unit to another.
  *
  * @param {number} value - The value to convert.
- * @param { "px" | "rem" | "em" | "%" | "vw" | "vh" | "vmin" | "vmax" | "ch" | "cm" | "in" | "mm" | "pt" | "pc" | "q" } targetUnit - The target CSS unit to convert to.
- * @param { "px" | "rem" | "em" | "%" | "vw" | "vh" | "vmin" | "vmax" | "ch" | "cm" | "in" | "mm" | "pt" | "pc" | "q" } sourceUnit - The source CSS unit to convert from.
+ * @param { "px" | "rem" | "em" | "%" | "vw" | "vh" | "vmin" | "vmax" | "ch" | "cm" | "in" | "mm" | "pt" | "pc" | "q" | "rlh" } targetUnit - The target CSS unit to convert to.
+ * @param { "px" | "rem" | "em" | "%" | "vw" | "vh" | "vmin" | "vmax" | "ch" | "cm" | "in" | "mm" | "pt" | "pc" | "q" | "rlh" } sourceUnit - The source CSS unit to convert from.
  * @param {boolean | number} [precision=false] - The precision of the converted value. If set to a number, rounds the value to that number of decimal places.
  * @param {object} [options] - Optional parameters for the conversion.
  * @param {number} [options.rootFontSize=16] - The root font size used for rem conversion.
