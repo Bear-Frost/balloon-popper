@@ -88,7 +88,16 @@ describe("get the root line height value of the root element", () => {
     global.window.document.documentElement = {};
     global.window.getComputedStyle = jest
       .fn()
-      .mockReturnValue({ lineHeight: 36, rootFontSize: 16 });
+      .mockReturnValue({ lineHeight: 36 });
     expect(getRootLineHeight()).toBe(36);
+  });
+});
+
+describe("get the root line height value of the root element if it defaults to 'normal'", () => {
+  it("should get the root line height value even if it's have a value of 'normal'", () => {
+    global.window.getComputedStyle = jest
+      .fn()
+      .mockReturnValue({ lineHeight: "normal", fontSize: 16 });
+    expect(getRootLineHeight()).toBe(24);
   });
 });
