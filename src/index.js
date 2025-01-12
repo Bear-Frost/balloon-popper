@@ -22,6 +22,7 @@ const conversion = {
     pt: (value) => value * (72 / 96),
     pc: (value) => value / 16,
     q: (value) => value * 4,
+    rlh:(value, props) => value / props.rootLineHeight 
   },
   in: {
     in: (value) => value,
@@ -39,6 +40,7 @@ const conversion = {
     pt: (value) => value * 72,
     pc: (value) => value * 6,
     q: (value) => value * 101.6,
+    rlh: (value,props) => value * 96 / props.rootLineHeight
   },
   pc: {
     pc: (value) => value,
@@ -60,6 +62,7 @@ const conversion = {
     in: (value) => (value * 16) / 96,
     pt: (value) => value * 16 * 0.75,
     q: (value) => value * 16.933333332,
+    rlh:(value,props) => value * 16 / props.rootLineHeight
   },
   pt: {
     pt: (value) => value,
@@ -77,6 +80,7 @@ const conversion = {
     in: (value) => value / 72,
     pc: (value) => value / 12,
     q: (value) => value * 1.411111111,
+    rlh:(value,props) => value * 96 / 72 / props.rootLineHeight 
   },
   ch: {
     ch: (value) => value,
@@ -99,6 +103,7 @@ const conversion = {
     pt: (value, props) => value * props.chFontSize * 0.75,
     pc: (value, props) => (value * props.chFontSize) / 16,
     q: (value, props) => (value * props.chFontSize * 40) / 37.7952755906,
+    rlh: (value,props) => value * props.chFontSize / props.rootLineHeight 
   },
   cm: {
     cm: (value) => value,
@@ -118,6 +123,7 @@ const conversion = {
     ch: (value, props) => (value * (96 / 2.54)) / props.chFontSize,
     mm: (value) => value * 10,
     q: (value) => value * 40,
+    rlh: (value,props) => value * 96 / 2.54 / props.rootLineHeight
   },
   mm: {
     mm: (value) => value,
@@ -135,6 +141,7 @@ const conversion = {
     ch: (value, props) => (value * 96) / 25.4 / props.chFontSize,
     cm: (value, props) => value / 10,
     q: (value) => value * 4,
+    rlh: (value,props) => value * 96 / 25.4 / props.rootLineHeight
   },
   q: {
     q: (value) => value,
@@ -152,6 +159,7 @@ const conversion = {
     in: (value) => value / 101.6,
     pt: (value) => value * 0.75,
     pc: (value) => (value * 25.4) / 96 / 12,
+    rlh: (value,props) => value * 96 / 25.4 / 4 / props.rootLineHeight
   },
   rem: {
     rem: (value) => value,
@@ -174,6 +182,7 @@ const conversion = {
     pt: (value, props) => value * props.rootFontSize * 0.75,
     pc: (value, props) => (value * props.rootFontSize) / 16,
     q: (value, props) => (value * props.rootFontSize * 40) / 37.7952755906,
+    rlh: (value, props) => (value * props.rootFontSize) / props.rootLineHeight 
   },
   em: {
     em: (value) => value,
@@ -195,6 +204,7 @@ const conversion = {
     pt: (value, props) => value * props.baseFontSize * 0.75,
     pc: (value, props) => (value * props.baseFontSize) / 16,
     q: (value, props) => (value * props.baseFontSize * 40) / 37.7952755906,
+    rlh: (value, props) => (value * props.baseFontSize) / props.rootLineHeight 
   },
   "%": {
     "%": (value) => value,
@@ -213,6 +223,7 @@ const conversion = {
     pt: (value) => (value / 100) * 0.75,
     pc: (value) => (value / 100) * 0.05,
     q: (value, props) => ((value / 100) * (props.baseFontSize * 40)) / 25.4,
+    rlh: (value, props) => (value * props.baseFontSize) / props.rootLineHeight 
   },
   vw: {
     vw: (value) => value,
@@ -237,6 +248,7 @@ const conversion = {
     pt: (value, props) => ((value / 100) * props.viewPortWidth) / 1.33333,
     pc: (value, props) => ((value / 100) * props.viewPortWidth) / 16,
     q: (value, props) => (value * props.viewPortWidth * 40) / (100 * 25.4),
+    rlh: (value,props) => (value * props.viewPortWidth * 0.01) / props.rootLineHeight 
   },
   vh: {
     vh: (value) => value,
@@ -261,6 +273,7 @@ const conversion = {
     pt: (value, props) => ((value / 100) * props.viewPortHeight) / 1.33333,
     pc: (value, props) => ((value / 100) * props.viewPortHeight) / 16,
     q: (value, props) => (value * props.viewPortHeight * 40) / (100 * 25.4),
+    rlh: (value,props) => (value * props.viewPortHeight * 0.01) / props.rootLineHeight 
   },
   vmin: {
     vmin: (value) => value,
@@ -285,6 +298,7 @@ const conversion = {
     pt: (value, props) => ((value / 100) * props.minViewPortSize) / 1.33333,
     pc: (value, props) => ((value / 100) * props.minViewPortSize) / 16,
     q: (value, props) => (value * props.minViewPortSize * 40) / (100 * 25.4),
+    rlh: (value,props) => (value * props.minViewPortSize * 0.01) / props.rootLineHeight 
   },
   vmax: {
     vmax: (value) => value,
@@ -309,6 +323,7 @@ const conversion = {
     pt: (value, props) => ((value / 100) * props.maxViewPortSize) / 1.33333,
     pc: (value, props) => ((value / 100) * props.maxViewPortSize) / 16,
     q: (value, props) => (value * props.maxViewPortSize * 40) / (100 * 25.4),
+    rlh: (value,props) => (value * props.maxViewPortSize * 0.01) / props.rootLineHeight 
   },
   rlh:{
     rlh: (value) => value,
