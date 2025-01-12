@@ -32,6 +32,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 12 },
     { targetUnit: "pc", expectedValue: 1 },
     { targetUnit: "q", expectedValue: 64 },
+    { targetUnit: "rlh", expectedValue: 0.67 },
   ]),
   // in unit conversion
   ...conversionItems("in", [
@@ -50,6 +51,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 1152 },
     { targetUnit: "pc", expectedValue: 96 },
     { targetUnit: "q", expectedValue: 1625.6 },
+    { targetUnit: "rlh", expectedValue: 64 },
   ]),
   // pc unit conversion
   ...conversionItems("pc", [
@@ -68,6 +70,7 @@ const unitConversion = [
     { targetUnit: "in", expectedValue: 2.67 },
     { targetUnit: "pt", expectedValue: 192 },
     { targetUnit: "q", expectedValue: 270.93 },
+    { targetUnit: "rlh", expectedValue: 10.67 },
   ]),
   // pt unit conversion
   ...conversionItems("pt", [
@@ -86,6 +89,7 @@ const unitConversion = [
     { targetUnit: "in", expectedValue: 0.22 },
     { targetUnit: "pc", expectedValue: 1.33 },
     { targetUnit: "q", expectedValue: 22.58 },
+    { targetUnit: "rlh", expectedValue: 0.89 },
   ]),
   // ch conversion unit
   ...conversionItems("ch", [
@@ -104,6 +108,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 192 },
     { targetUnit: "pc", expectedValue: 16 },
     { targetUnit: "q", expectedValue: 270.93 },
+    { targetUnit: "rlh", expectedValue: 10.67 },
   ]),
   // cm unit conversion
   ...conversionItems("cm", [
@@ -122,6 +127,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 453.54 },
     { targetUnit: "pc", expectedValue: 37.8 },
     { targetUnit: "q", expectedValue: 640 },
+    { targetUnit: "rlh", expectedValue: 25.2 },
   ]),
   // mm unit conversion
   ...conversionItems("mm", [
@@ -140,6 +146,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 45.35 },
     { targetUnit: "pc", expectedValue: 3.78 },
     { targetUnit: "q", expectedValue: 64 },
+    { targetUnit: "rlh", expectedValue: 2.52 },
   ]),
   // q unit conversion
   ...conversionItems("q", [
@@ -158,6 +165,7 @@ const unitConversion = [
     { targetUnit: "in", expectedValue: 0.16 },
     { targetUnit: "pt", expectedValue: 12.0 },
     { targetUnit: "pc", expectedValue: 0.35 },
+    { targetUnit: "rlh", expectedValue: 0.63 },
   ]),
   // rem unit conversion
   ...conversionItems("rem", [
@@ -176,6 +184,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 192 },
     { targetUnit: "pc", expectedValue: 16 },
     { targetUnit: "q", expectedValue: 270.93 },
+    { targetUnit: "rlh", expectedValue: 10.67 },
   ]),
   // em unit conversion
   ...conversionItems("em", [
@@ -194,6 +203,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 192 },
     { targetUnit: "pc", expectedValue: 16 },
     { targetUnit: "q", expectedValue: 270.93 },
+    { targetUnit: "rlh", expectedValue: 10.67 },
   ]),
   // % unit conversion
   ...conversionItems("%", [
@@ -212,6 +222,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 0.12 },
     { targetUnit: "pc", expectedValue: 0.01 },
     { targetUnit: "q", expectedValue: 4.03 },
+    { targetUnit: "rlh", expectedValue: 10.67 },
   ]),
   // vw unit conversion
   ...conversionItems("vw", [
@@ -230,6 +241,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 153.6 },
     { targetUnit: "pc", expectedValue: 12.8 },
     { targetUnit: "q", expectedValue: 322.52 },
+    { targetUnit: "rlh", expectedValue: 8.53 },
   ]),
   // vh unit conversion
   ...conversionItems('vh',[
@@ -248,6 +260,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 89.16 },
     { targetUnit: "pc", expectedValue: 7.43 },
     { targetUnit: "q", expectedValue: 187.21 },
+    { targetUnit: "rlh", expectedValue: 4.95 },
   ]),
   // vmin unit conversion
   ...conversionItems('vmin',[
@@ -265,6 +278,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 89.16 },
     { targetUnit: "pc", expectedValue: 7.43 },
     { targetUnit: "q", expectedValue: 187.21 },
+    { targetUnit: "rlh", expectedValue: 4.95 },
   ]),
   // vmax unit conversion
   ...conversionItems('vmax',[
@@ -282,6 +296,7 @@ const unitConversion = [
     { targetUnit: "pt", expectedValue: 153.6 },
     { targetUnit: "pc", expectedValue: 12.8 },
     { targetUnit: "q", expectedValue: 322.52 },
+    { targetUnit: "rlh", expectedValue: 8.53 },
   ]),
   ...conversionItems('rlh',[
     { targetUnit:"rlh",expectedValue:16 },
